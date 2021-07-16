@@ -1,0 +1,17 @@
+This repo contains complete, reproducible machine configurations, using [[https://nixos.org][nix]], for two
+servers: [[deploy/kaitain.nix][Kaitain]] and [[deploy/caladan.nix][Caladan]].
+
+They can be built and deployed using the 2 commands below.
+
+Secrets are encrypted using [[https://github.com/AGWA/git-crypt][git-crypt]] in deploy/secrets/
+
+1. Install Nix, git
+2. Update server info in deploy/default.nix
+3. Assure that pubkeys are installed on the server
+
+#+begin_src shell
+$ git clone https://github.com/tgunnoe/nixus.git
+$ cd ops
+$ nix-build deploy/default.nix
+$ ./result
+#+end_src
